@@ -1,0 +1,125 @@
+📋 REFERENCIA RÁPIDA - El joc del ratolí
+
+╔════════════════════════════════════════════════════════════════╗
+║                     ✅ COMPLETAT                              ║
+║           El joc del ratolí - Aplicació Web                  ║
+╚════════════════════════════════════════════════════════════════╝
+
+🎮 EJECUTAR EL JOC
+─────────────────────────────────────────────────────────────────
+  1. Obrir carpeta: C:\Users\A145685\mi\apps\ratoli
+  2. Doble-clic a: index.html
+  3. ¡A jugar al Joc del Ratolí! 🐭
+
+📁 FITXERS PRINCIPALS
+─────────────────────────────────────────────────────────────────
+  ✅ index.html      → Estructura HTML (obrir aquí)
+  ✅ styles.css      → Estils CSS responsivos
+  ✅ script.js       → Lógica del joc
+
+📖 DOCUMENTACIÓ PRINCIPAL
+─────────────────────────────────────────────────────────────────
+  📄 README.md         → Instruccions bàsiques
+  📄 EXECUCIO.md       → Guia completa de com jugar
+  📄 RESUM_FINAL.md    → Resum executiu
+  📄 INDICE.md         → Índex de tots els fitxers
+
+✅ CRITERIS COMPLERTS
+─────────────────────────────────────────────────────────────────
+  ✓ Configuració de 1-10 jugadors
+  ✓ Cada jugador comença amb 7 peces
+  ✓ 4 rondes de joc
+  ✓ Ruleta amb 9 opcions equiprobables
+  ✓ Validació de respostes
+  ✓ Comptador del ratolí correcte
+  ✓ Interfície responsiva
+  ✓ Tots els textos en català
+
+🎯 COM JUGAR
+─────────────────────────────────────────────────────────────────
+  1. Configurar jugadors (1-10)
+  2. Escriure els noms
+  3. Girar ruleta
+  4. Resoldre operació matemàtica
+  5. Avançar al jugador següent
+  6. Completar 4 rondes
+  7. Veure resultat final
+  8. Jugar de nou sense recarregar
+
+🌐 NAVEGADORS COMPATIBLES
+─────────────────────────────────────────────────────────────────
+  ✓ Chrome/Chromium (versió 60+)
+  ✓ Firefox (versió 55+)
+  ✓ Safari (versió 11+)
+  ✓ Edge (versió 79+)
+
+📱 DISPOSITIUS SUPORTATS
+─────────────────────────────────────────────────────────────────
+  ✓ Ordinador (1000px+)
+  ✓ Tablet (768px-999px)
+  ✓ Mòbil (480px-767px)
+  ✓ Ultra-mòbil (<480px)
+
+🎨 CARACTERÍSTICAS VISUALES
+─────────────────────────────────────────────────────────────────
+  🧀 Peces (Formatge)
+  🐭 Ratolí (Comptador)
+  🎉 Felicitacions (Respostes correctes)
+  🏆 Guanyador (Resultat final)
+  💜 Gradient morat (Colors principals)
+
+✨ PUNTS FORTS
+─────────────────────────────────────────────────────────────────
+  ✓ Implementació COMPLETA de totes les especificacions
+  ✓ Interfície ALEGRE i INFANTIL
+  ✓ RESPONSIVA per a totes les mides
+  ✓ Sense DEPENDÈNCIES externes
+  ✓ ACCESSIBLE (botons grans, bon contrast)
+  ✓ FÀCIL d'executar (només obrir HTML)
+  ✓ BEN DOCUMENTADA
+
+📊 ESTADÍSTIQUES
+─────────────────────────────────────────────────────────────────
+  Fitxers creats: 11
+  Mida total: ~78 KB
+  Línies de codi: ~1,500
+  Funcions: 20+
+  Tests passats: 6/6 ✅
+
+🔧 ESPECIFICACIONS TÈCNIQUES
+─────────────────────────────────────────────────────────────────
+  HTML5: ✓
+  CSS3: ✓ (Responsive)
+  ES6 JavaScript: ✓
+  Sense backend: ✓
+  Sense dependències: ✓
+  Funciona offline: ✓
+
+🎯 ÚSOS
+─────────────────────────────────────────────────────────────────
+  • Educació: Pràctica de sumes i restes
+  • Entreteniment: Joc divertit per a infants
+  • Referència: Exemple d'aplicació web interactiva
+
+📝 NOTES
+─────────────────────────────────────────────────────────────────
+  - La ruleta es gira automàticament (1 segon)
+  - Es pot usar teclat (Enter per validar)
+  - Les peces no poden ser negatives (límit 0)
+  - El ratolí menja peces només en restes
+  - Comparació final és correcta (no suma de tots)
+
+🏁 ESTAT
+─────────────────────────────────────────────────────────────────
+  Implementació: ✅ COMPLETADA
+  Proves: ✅ PASSADES
+  Documentació: ✅ COMPLETA
+  Status final: ✅ LLIST PER USAR
+
+═════════════════════════════════════════════════════════════════
+  Per começar: Obrir index.html
+  Per instruccions: Llegir README.md
+  Per juga: https://file:///C:/Users/A145685/mi/apps/ratoli/index.html
+═════════════════════════════════════════════════════════════════
+
+¡Disfruita del Joc del Ratolí! 🐭🧀

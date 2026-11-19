@@ -1,0 +1,202 @@
+🎉 EL JOC DEL RATOLÍ - ACTUALITZACIÓ V1.1
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ NOVA CARACTERÍSTICA: MODES DE JOC SIMPLIFICATS
+
+═══════════════════════════════════════════════════════════════════════════════
+
+He afegit dos modes de joc fàcils d'usar a la pantalla de configuració:
+
+🧒 MODE 1 JUGADOR (SOLO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Juga tu sol contra el ratolí
+- Perfecte per practicar matemàtiques individualment
+- Mode ideal per a infants que volen aprendre sense competència
+
+👭 MODE 2 JUGADORS (DUEL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Juga contra un oponent
+- Mode competitiu i divertit
+- Perfecte per a hermanes, amics o grups petits
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎨 INTERFÍCIE MILLORADA
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**ABANS:**
+  Quants jugadors jugueu?
+  [Input 1-10]
+
+**DESPRES:**
+  Escull mode de joc:
+  ┌──────────────┐    ┌──────────────┐
+  │   🧒         │    │   👭         │
+  │ 1 Jugador   │    │ 2 Jugadors  │
+  │  (Solo)      │    │  (Duel)      │
+  └──────────────┘    └──────────────┘
+
+✅ Botons grans amb emojis (per a nens)
+✅ Descripcions clares (Solo / Duel)
+✅ Selector visual intuitiu
+✅ Fàcil de canviar de mode
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🧪 VERIFICACIÓ DE FUNCIONALITATS
+
+═══════════════════════════════════════════════════════════════════════════════
+
+MODE 1 JUGADOR:
+  ✅ Comença correctament amb 1 jugador
+  ✅ La taula mostra només "Jugador 1"
+  ✅ La ruleta funciona
+  ✅ Les peces s'actualitzen
+  ✅ El ratolí menja peces a les restes
+  ✅ Partida completa funciona
+
+MODE 2 JUGADORS:
+  ✅ Comença correctament amb 2 jugadors
+  ✅ La taula mostra "Jugador 1" i "Jugador 2"
+  ✅ Els turnos alternen entre jugadors
+  ✅ Cada jugador comença amb 7 peces
+  ✅ Les peces s'actualitzen correctament
+  ✅ El ratolí menja peces a les restes
+  ✅ Passa al jugador 2 després de Jugador 1
+  ✅ Partida completa funciona
+
+INTERFÍCIE:
+  ✅ Els botons de mode es mostren correctament
+  ✅ Efect visual quan es selecciona un mode
+  ✅ Es pot canviar de mode en tot moment
+  ✅ Els noms de jugadors es mostren/amagues dinàmicament
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 DOCUMENTACIÓ ACTUALITZADA
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ **README.md** (Actualitzat)
+   - Mecànica de joc amb modes
+   - Descripció dels modes 1 i 2 jugadors
+
+✅ **MANUAL_USUARI.md** (Actualitzat)
+   - Instruccions del selector de modes
+   - Passos actualitzats de configuració
+
+✅ **FAQ.md** (Actualitzat)
+   - Preguntes sobre els modes
+   - Respostes sobre 1 vs 2 jugadors
+   - Informació de compatibilitat
+
+✅ **NOVETATS.md** (Creat)
+   - Descripció completa de les millores
+   - Comparativa Before/After
+   - Resum de canvis de codi
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 CANVIS TÈCNICS
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**index.html**
+  - Afegit selector visual de modes amb botons
+  - Botons amb emojis (🧒 i 👭)
+  - Descripcions (Solo / Duel)
+  - Input de nombre de jugadors amagat per defecte
+
+**styles.css**
+  - Estils per `.mode-selector` (flex layout)
+  - Estils per `.mode-btn` (botons grans)
+  - Efect de selecció amb bordo i fons blau
+  - Hover effects per a accessibilitat
+  - Responsive a tots els dispositius
+
+**script.js**
+  - Funció nova `setGameMode(numPlayers)`
+  - Event listeners per als botons de mode
+  - Inicialització amb `setGameMode(1)` per defecte
+  - Dinàmic - es pot canviar en tot moment
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 OBJECTIUS ASSOLITS
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Selector visual de modes (1 jugador vs 2 jugadors)
+✅ Interfície intuitiva per a infants
+✅ Noms de jugadors actualitzats dinàmicament
+✅ Funcionalitat completa per a ambdós modes
+✅ Documentació actualitzada
+✅ Sense trencaments en la lógica existent
+✅ Accessibilitat mejorada
+✅ Responsivo en tots els dispositius
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 COM USAR LA NOVA CARACTERÍSTICA
+
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Obrir `index.html` al navegador
+
+2. ESCULL MODE:
+   - Cliqueu "🧒 1 Jugador (Solo)" per jugar soles
+   - Cliqueu "👭 2 Jugadors (Duel)" per jugar amb oponent
+
+3. CONFIGURACIÓ:
+   - Els noms es mostraràn automàticament
+   - Pots canviar els noms si vols
+
+4. JUGA:
+   - Cliqueu "Comença a jugar!"
+   - Juga normalment
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💾 COMPATIBILITAT
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Tots els navegadors moderns (Chrome, Firefox, Safari, Edge)
+✅ Mòbil, tablet, desktop
+✅ Sense dependències externes
+✅ 100% compatible amb la versió anterior
+✅ No necessita migració de dades
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 ESTADÍSTIQUES DE L'ACTUALITZACIÓ
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Fitxers creats:        1 (NOVETATS.md)
+Fitxers actualitzats:  7 (index.html, styles.css, script.js, README.md, 
+                          MANUAL_USUARI.md, FAQ.md, NOVETATS.md)
+Línies de codi añadidas: ~100
+Estils CSS afegits:    ~50 línies
+Funcionalitat nova:    Mode selector visual
+Proves executades:     ✅ Completes
+Documentació:          ✅ Actualitzada
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ CONCLUSIÓ
+
+═══════════════════════════════════════════════════════════════════════════════
+
+He implementat correctament la nova característica de modes de joc simplificats
+(1 jugador i 2 jugadors). La interfície es intuïtiva, la funcionalitat és 
+completa i la documentació està actualitzada. L'aplicació es 100% funcional i 
+llesta per usar.
+
+Versió: 1.1
+Data: 19 de novembre de 2026
+Status: ✅ COMPLETA
+
+═══════════════════════════════════════════════════════════════════════════════

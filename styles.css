@@ -1,0 +1,696 @@
+/* Estils generals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Pantalles */
+.screen {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pantalla de configuració */
+.config-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.config-section {
+    margin-bottom: 25px;
+}
+
+/* Selector de mode de joc */
+.mode-selector {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.mode-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 25px;
+    min-width: 150px;
+    border: 3px solid #ddd;
+    border-radius: 15px;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.mode-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.mode-btn-active {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    color: #667eea;
+}
+
+.mode-emoji {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.mode-text {
+    font-size: 1.3em;
+    display: block;
+}
+
+.mode-desc {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.label {
+    display: block;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-number {
+    font-size: 1.1em;
+    padding: 12px 15px;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.input-number:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+
+.player-names-container {
+    margin-bottom: 25px;
+}
+
+.player-name-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.player-name-input label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.player-name-input input {
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.player-name-input input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.2);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    min-height: 25px;
+    font-weight: bold;
+}
+
+/* Botons */
+.btn {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.3em;
+}
+
+/* Pantalla de joc */
+.game-container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.game-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.game-header h2 {
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.game-header p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Taula de puntuació */
+.scoreboard {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid #ddd;
+}
+
+.scoreboard h3 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.player-card {
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-card.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.player-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.player-pieces {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.pieces-visual {
+    margin-top: 8px;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+/* Ruleta */
+.wheel-section {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #ddd;
+}
+
+.wheel-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    height: 250px;
+}
+
+.wheel {
+    width: 200px;
+    height: 200px;
+    animation: spin-idle 4s linear infinite;
+}
+
+.wheel-container.spinning .wheel {
+    animation: spin-wheel 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes spin-idle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-wheel {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.wheel-pointer {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid #FF6B6B;
+    top: 20px;
+}
+
+#spinWheelBtn {
+    margin-top: 10px;
+}
+
+/* Resultat de la ruleta */
+.wheel-result-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #FFE6E6;
+    border-radius: 12px;
+    border: 2px solid #FF6B6B;
+}
+
+.wheel-result-section.hidden {
+    display: none;
+}
+
+.wheel-result-text {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+#wheelResult {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* Secció matemàtica */
+.math-section {
+    text-align: center;
+    padding: 20px;
+    background: #E6F2FF;
+    border-radius: 15px;
+    border: 2px solid #667eea;
+    margin-bottom: 20px;
+}
+
+.math-section.hidden {
+    display: none;
+}
+
+.math-problem {
+    margin-bottom: 20px;
+}
+
+#mathProblem {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+
+.visual-operation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.visual-operation:empty {
+    display: none;
+}
+
+.rods-number {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    max-width: 220px;
+    padding: 8px 10px;
+    background: #fff;
+    border: 2px dashed #667eea;
+    border-radius: 10px;
+}
+
+.rod-ten {
+    display: block;
+    width: 18px;
+    height: 100px;
+    background: #FF8C42;
+    border: 2px solid #c75f14;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.rod-unit {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: #4ECDC4;
+    border: 2px solid #2a9d95;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.visual-sign {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.input-section input {
+    font-size: 1.3em;
+    padding: 12px 20px;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.input-section input:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+
+#checkAnswerBtn {
+    min-width: 150px;
+}
+
+.feedback-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 30px;
+    margin-top: 10px;
+}
+
+.feedback-message.correct {
+    color: #27ae60;
+}
+
+.feedback-message.incorrect {
+    color: #e74c3c;
+}
+
+.feedback-message.info {
+    color: #2980b9;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/* Secció Següent torn */
+.next-turn-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.next-turn-section.hidden {
+    display: none;
+}
+
+#nextTurnBtn {
+    min-width: 200px;
+}
+
+/* Pantalla de final */
+.end-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.end-summary {
+    margin-bottom: 30px;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.summary-box h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.summary-box span {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.result-box {
+    background: #fff9e6;
+    border: 3px solid #f39c12;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+}
+
+.result-message {
+    font-size: 2.5em;
+    color: #f39c12;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.final-scoreboard {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid #ddd;
+}
+
+.final-scoreboard h3 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#playAgainBtn {
+    min-width: 200px;
+}
+
+/* Responsiu */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .game-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .game-header h2,
+    .game-header p {
+        font-size: 1.1em;
+    }
+
+    .wheel-container {
+        height: 220px;
+    }
+
+    .wheel {
+        width: 180px;
+        height: 180px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+
+    .result-message {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .config-container,
+    .game-container,
+    .end-container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .title {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .game-header h2,
+    .game-header p {
+        font-size: 0.95em;
+    }
+
+    .wheel-container {
+        height: 200px;
+    }
+
+    .wheel {
+        width: 160px;
+        height: 160px;
+    }
+
+    .player-card {
+        min-width: 100px;
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+
+    .result-message {
+        font-size: 1.5em;
+    }
+
+    .summary-box {
+        font-size: 1.1em;
+    }
+
+    .summary-box span {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El joc del ratolí</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Pantalla de Configuració -->
+        <div id="configScreen" class="screen active">
+            <div class="config-container">
+                <h1 class="title">🐭 El joc del ratolí 🐭</h1>
+                
+                <div class="config-section">
+                    <label class="label">Escull mode de joc:</label>
+                    <div class="mode-selector">
+                        <button id="modeOnePlayer" class="mode-btn mode-btn-active">
+                            <span class="mode-emoji">🧒</span>
+                            <span class="mode-text">1 Jugador</span>
+                            <span class="mode-desc">(Solo)</span>
+                        </button>
+                        <button id="modeTwoPlayers" class="mode-btn">
+                            <span class="mode-emoji">👭</span>
+                            <span class="mode-text">2 Jugadors</span>
+                            <span class="mode-desc">(Duel)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <label for="numPlayers" class="label" id="numPlayersLabel">Nombre de jugadors (1-10):</label>
+                    <input 
+                        type="number" 
+                        id="numPlayers" 
+                        min="1" 
+                        max="10" 
+                        value="1"
+                        class="input-number"
+                        style="display: none;"
+                    >
+                </div>
+
+                <div id="playerNamesContainer" class="player-names-container">
+                    <!-- S'afegeix dinàmicament amb JavaScript -->
+                </div>
+
+                <div id="configError" class="error-message"></div>
+
+                <button id="startGameBtn" class="btn btn-primary btn-large">Comença a jugar!</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Joc -->
+        <div id="gameScreen" class="screen">
+            <div class="game-container">
+                <!-- Capçalera -->
+                <div class="game-header">
+                    <div class="round-info">
+                        <h2>Ronda <span id="roundNumber">1</span> de 4</h2>
+                    </div>
+                    <div class="player-info">
+                        <h2>Torn de <span id="currentPlayerName">-</span></h2>
+                    </div>
+                    <div class="mouse-info">
+                        <p>🐭 Peces menjades: <span id="mouseCount">0</span></p>
+                    </div>
+                </div>
+
+                <!-- Taula de puntuació -->
+                <div class="scoreboard">
+                    <h3>Peces de cada jugador:</h3>
+                    <div id="playersList" class="players-list">
+                        <!-- S'afegeix dinàmicament amb JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Ruleta -->
+                <div class="wheel-section">
+                    <h3>Gira la ruleta!</h3>
+                    <div class="wheel-container">
+                        <svg class="wheel" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#ccc" stroke-width="2"/>
+                            <!-- Sectors de la ruleta s'afegeixen dinàmicament -->
+                            <g id="wheelSectors"></g>
+                            <!-- Indicador superior -->
+                            <polygon points="100,20 110,40 90,40" fill="#FF6B6B" stroke="#000" stroke-width="2"/>
+                        </svg>
+                        <div class="wheel-pointer"></div>
+                    </div>
+                    <button id="spinWheelBtn" class="btn btn-primary">Gira la ruleta</button>
+                </div>
+
+                <!-- Resultat de la ruleta -->
+                <div id="wheelResultSection" class="wheel-result-section hidden">
+                    <p class="wheel-result-text">Ha sortit: <span id="wheelResult">-</span></p>
+                </div>
+
+                <!-- Operació matemàtica -->
+                <div id="mathSection" class="math-section hidden">
+                    <div class="math-problem">
+                        <p id="mathProblem">-</p>
+                    </div>
+
+                    <div id="visualOperation" class="visual-operation" aria-label="Operació amb reglets"></div>
+                    
+                    <div class="input-section">
+                        <input 
+                            type="number" 
+                            id="answerInput" 
+                            placeholder="Escriu la resposta"
+                            class="input-number"
+                        >
+                        <button id="checkAnswerBtn" class="btn btn-primary">Comprova</button>
+                    </div>
+
+                    <div id="feedbackMessage" class="feedback-message"></div>
+                </div>
+
+                <!-- Botó Següent torn -->
+                <div id="nextTurnSection" class="next-turn-section hidden">
+                    <button id="nextTurnBtn" class="btn btn-primary btn-large">Següent torn</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Final -->
+        <div id="endScreen" class="screen">
+            <div class="end-container">
+                <h1 class="title">Fi de la partida!</h1>
+
+                <div class="end-summary">
+                    <div class="summary-box">
+                        <h2>🐭 El ratolí ha menjat <span id="totalMousePieces">0</span> peces</h2>
+                    </div>
+
+                    <div class="summary-box">
+                        <h2>🏆 El jugador amb més peces: <span id="winnerInfo">-</span></h2>
+                    </div>
+
+                    <div class="result-box">
+                        <h1 id="resultMessage" class="result-message">-</h1>
+                    </div>
+                </div>
+
+                <!-- Resum final de puntuacions -->
+                <div class="final-scoreboard">
+                    <h3>Peces finals de cada jugador:</h3>
+                    <div id="finalPlayersList" class="players-list">
+                        <!-- S'afegeix dinàmicament amb JavaScript -->
+                    </div>
+                </div>
+
+                <button id="playAgainBtn" class="btn btn-primary btn-large">Torna a jugar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
