@@ -26,13 +26,13 @@ Crea una aplicació web infantil, visual, intuïtiva i en català anomenada **El
 - El jugador ha d'introduir la resposta i prémer **Comprova**.
 - Si la resposta és incorrecta, mostra un missatge amable i permet tornar-ho a provar, sense avançar de torn ni modificar les peces.
 - Si és correcta, actualitza el recompte de peces, mostra un missatge de felicitació i habilita **Següent torn**.
-- A més de l'operació numèrica, mostra-la visualment amb reglets: cada nombre es representa amb una barra per cada desena i un quadrat per cada unitat.
+- A més de l'operació numèrica, mostra-la visualment amb reglets (una barra per cada desena i un quadrat per cada unitat) en un sol grup: en una suma, les peces que ja té el jugador d'un color i les afegides d'un altre; en una resta, totes les peces del jugador amb les que es perden ratllades.
 - Exemple: 7 peces, surt `-2` → `7 - 2 = 5`; més endavant surt `+3` → `5 + 3 = 8`.
 
 ## Peces i ratolí
 - Quan un jugador perd peces per una resta, **el ratolí se les menja**: augmenta el comptador acumulat de peces menjades pel ratolí en el nombre de peces realment perdudes.
 - Quan un jugador guanya peces per una suma, aquestes s'afegeixen al jugador i **no es resten** del comptador del ratolí.
-- **Regla per evitar peces negatives (supòsit explícit):** si surt una resta superior a les peces disponibles, el jugador es queda amb 0 peces i el ratolí només menja les peces que quedaven. Per exemple, amb 2 peces i `-4`, mostra `2 - 4` com a repte però explica que no es poden perdre més de 2 peces. Per evitar una operació aritmètica amb resultat contradictori, en aquest cas demana la resposta matemàtica `-2`, i després aplica el límit de 0 peces al marcador. Mostra una explicació infantil clara. Mantén separats el resultat matemàtic i el recompte final de peces.
+- **Regla per evitar peces negatives (supòsit explícit):** si surt una resta superior a les peces disponibles, el jugador es queda amb 0 peces i el ratolí només menja les peces que quedaven. Per exemple, amb 2 peces i `-4`, mostra `2 - 4` com a repte però explica que no es poden perdre més de 2 peces. Per evitar una operació aritmètica amb resultat contradictori, en aquest cas demana la resposta matemàtica `-2`, però accepta també `0` com a resposta vàlida (els infants encara no han treballat els negatius), i després aplica el límit de 0 peces al marcador. Mostra una explicació infantil clara. Mantén separats el resultat matemàtic i el recompte final de peces.
 
 ## Final de partida
 Després que **tots els jugadors** hagin completat el torn de la ronda 4:

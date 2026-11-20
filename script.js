@@ -249,53 +249,66 @@ function showMathProblem() {
     
     // Si és una resta que podria donar negativa, mostra una explicació
     if (gameState.wheelValue < 0 && gameState.currentPieces + gameState.wheelValue < 0) {
-        const explanation = `Tens ${gameState.currentPieces} peces. Si en pierdes ${Math.abs(gameState.wheelValue)}, però només en tens ${gameState.currentPieces}, el ratolí només pot menjar-se les ${gameState.currentPieces} que tens. Resol l'operació matemàtica (${gameState.currentPieces} ${gameState.wheelValue} = ?):`;
+        const explanation = `Tens ${gameState.currentPieces} peces. Si en pierdes ${Math.abs(gameState.wheelValue)}, però només en tens ${gameState.currentPieces}, el ratolí només pot menjar-se les ${gameState.currentPieces} que tens. Quantes peces et queden? (Si no coneixes els números negatius, escriu 0.)`;
         feedbackMessage.classList.add('info');
         feedbackMessage.textContent = explanation;
     }
 }
 
 // Crea la representació amb reglets d'un nombre: una barra per desena i un quadrat per unitat
-function createRodsNumber(value) {
-    const group = document.createElement('div');
-    group.className = 'rods-number';
-    group.setAttribute('role', 'img');
-    group.setAttribute('aria-label', `${value}`);
-
-    const tens = Math.floor(value / 10);
-    const units = value % 10;
-
-    for (let i = 0; i < tens; i++) {
-        const bar = document.createElement('span');
-        bar.className = 'rod-ten';
-        group.appendChild(bar);
+function createTenBar(crossedSegments) {
+    const bar = document.createElement('span');
+    bar.className = 'rod-ten';
+    for (let i = 0; i < 10; i++) {
+        const segment = document.createElement('span');
+        segment.className = 'rod-segment';
+        if (i >= 10 - crossedSegments) segment.classList.add('crossed');
+        bar.appendChild(segment);
     }
-    for (let i = 0; i < units; i++) {
-        const square = document.createElement('span');
-        square.className = 'rod-unit';
-        group.appendChild(square);
-    }
-    return group;
+    return bar;
 }
 
-// Mostra l'operació amb reglets: peces actuals, signe i valor de la ruleta
+function createUnitSquare(extraClass) {
+    const square = document.createElement('span');
+    square.className = 'rod-unit';
+    if (extraClass) square.classList.add(extraClass);
+    return square;
+}
+
+// Mostra l'operació en un sol grup de reglets:
+// suma: peces que ja té (un color) + peces afegides (un altre color);
+// resta: totes les peces que té, amb les que es perden ratllades.
 function renderVisualOperation(pieces, wheelValue) {
     visualOperation.innerHTML = '';
 
-    const sign = document.createElement('span');
-    sign.className = 'visual-sign';
-    sign.textContent = wheelValue > 0 ? '+' : '−';
+    const group = document.createElement('div');
+    group.className = 'rods-number';
+    group.setAttribute('role', 'img');
 
-    const equals = document.createElement('span');
-    equals.className = 'visual-sign';
-    equals.textContent = '= ?';
+    const tens = Math.floor(pieces / 10);
+    const units = pieces % 10;
 
-    visualOperation.append(
-        createRodsNumber(pieces),
-        sign,
-        createRodsNumber(Math.abs(wheelValue)),
-        equals
-    );
+    if (wheelValue > 0) {
+        for (let i = 0; i < tens; i++) group.appendChild(createTenBar(0));
+        for (let i = 0; i < units; i++) group.appendChild(createUnitSquare());
+        for (let i = 0; i < wheelValue; i++) group.appendChild(createUnitSquare('added'));
+        group.setAttribute('aria-label', `${pieces} peces i n'afegim ${wheelValue}`);
+    } else {
+        const crossed = Math.min(Math.abs(wheelValue), pieces);
+        const crossedUnits = Math.min(crossed, units);
+        // Les peces que no surten de les unitats es treuen de l'última barra
+        const crossedInTens = crossed - crossedUnits;
+
+        for (let i = 0; i < tens; i++) {
+            group.appendChild(createTenBar(i === tens - 1 ? crossedInTens : 0));
+        }
+        for (let i = 0; i < units; i++) {
+            group.appendChild(createUnitSquare(i >= units - crossedUnits ? 'crossed' : ''));
+        }
+        group.setAttribute('aria-label', `${pieces} peces i en treiem ${crossed}`);
+    }
+
+    visualOperation.appendChild(group);
 }
 
 // Comprova la resposta
@@ -310,8 +323,10 @@ function checkAnswer() {
     }
     
     const correctAnswer = gameState.currentPieces + gameState.wheelValue;
+    // Si el resultat és negatiu, també s'accepta 0 (els nens encara no coneixen els negatius)
+    const isCorrect = userAnswer === correctAnswer || (correctAnswer < 0 && userAnswer === 0);
     
-    if (userAnswer === correctAnswer) {
+    if (isCorrect) {
         // Resposta correcta
         feedbackMessage.classList.remove('incorrect', 'info');
         feedbackMessage.classList.add('correct');

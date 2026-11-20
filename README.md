@@ -62,7 +62,7 @@ El joc del ratolí/
 
 ✅ **Configuració de jugadors**: 1-10 jugadors amb noms personalitzats.
 ✅ **Ruleta animada**: 8 opcions equiprobables (-1, -2, -3, -4, +1, +2, +3, +4).
-✅ **Operació amb reglets**: cada nombre es mostra amb barres (desenes) i quadrats (unitats), a més de l'operació numèrica.
+✅ **Operació amb reglets**: un sol grup de barres (desenes) i quadrats (unitats). En sumes, les peces que ja tens d'un color i les afegides d'un altre; en restes, les peces que es perden surten ratllades. Si el resultat seria negatiu, també s'accepta 0.
 ✅ **Operacions matemàtiques**: Suma i resta amb validació de resposta.
 ✅ **Comptador del ratolí**: Registra les peces menjades per restes.
 ✅ **4 rondes**: Cada jugador juga exactament una vegada per ronda.

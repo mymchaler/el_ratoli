@@ -441,7 +441,7 @@ body {
     align-items: flex-end;
     justify-content: center;
     gap: 4px;
-    max-width: 220px;
+    max-width: 320px;
     padding: 8px 10px;
     background: #fff;
     border: 2px dashed #667eea;
@@ -449,13 +449,20 @@ body {
 }
 
 .rod-ten {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 18px;
     height: 100px;
-    background: #FF8C42;
-    border: 2px solid #c75f14;
+    background: #2a9d95;
+    border: 2px solid #2a9d95;
     border-radius: 3px;
     box-sizing: border-box;
+    gap: 1px;
+}
+
+.rod-segment {
+    flex: 1;
+    background: #4ECDC4;
 }
 
 .rod-unit {
@@ -468,10 +475,21 @@ body {
     box-sizing: border-box;
 }
 
-.visual-sign {
-    font-size: 2em;
-    font-weight: bold;
-    color: #333;
+/* Peces afegides en una suma */
+.rod-unit.added {
+    background: #FF8C42;
+    border-color: #c75f14;
+}
+
+/* Peces que es perden en una resta: ratllades */
+.rod-unit.crossed,
+.rod-segment.crossed {
+    background-color: #e5e5e5;
+    background-image: linear-gradient(to top right, transparent calc(50% - 1.5px), #e74c3c calc(50% - 1.5px), #e74c3c calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+
+.rod-unit.crossed {
+    border-color: #999;
 }
 
 .input-section {
